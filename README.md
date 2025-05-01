@@ -1,4 +1,4 @@
-# Note
+# Note.
 
 - So please run Strapi Backend app and then run this app.
 
