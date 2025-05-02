@@ -23,7 +23,13 @@ const ModelViewer3d = forwardRef(
     //   BLUE: "#0875db", // RGBA for blue
     //   BLACK: "#000", // RGBA for black
     // };
-
+    useEffect(() => {
+      // Dynamically load model-viewer module on client
+      const script = document.createElement("script");
+      script.type = "module";
+      script.src = "https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js";
+      document.body.appendChild(script);
+    }, []);
     const hotspotClickHandler = (hotspotDetail) => {
       setActiveHotspot(hotspotDetail); // Set active hotspot for modal
       const target = `${hotspotDetail.dataPositionX} ${hotspotDetail.dataPositionY} ${hotspotDetail.dataPositionZ}`;
