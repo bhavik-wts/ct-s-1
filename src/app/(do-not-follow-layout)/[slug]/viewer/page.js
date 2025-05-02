@@ -1,18 +1,18 @@
 "use client";
 //export const dynamic = "force-dynamic";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import { useRef, useState, useEffect } from "react";
-//import ModelViewer3d from "@/components/pages/viewer/ModelViewer3d";
+import ModelViewer3d from "@/components/pages/viewer/ModelViewer3d";
 import { useParams, useRouter } from "next/navigation";
 import Loading from "./loading";
 import { getStrapiURL } from "@/lib/utils";
 import { GET_TRACTOR_BY_SLUG_VIEWER } from "@/graphql/queries/get-tractor-by-slug-viewer";
 import { fetchData as graphqlFetchData } from "@/lib/graphql-operations";
 import ibutton from "../../../../../public/images/ibutton.svg";
-const ModelViewer3d = dynamic(
-  () => import("@/components/pages/viewer/ModelViewer3d"),
-  { ssr: false }
-);
+// const ModelViewer3d = dynamic(
+//   () => import("@/components/pages/viewer/ModelViewer3d"),
+//   { ssr: false }
+// );
 
 const TractorViewer = () => {
   const { slug } = useParams();
